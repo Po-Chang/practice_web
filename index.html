@@ -6,9 +6,10 @@
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <script src="//code.jquery.com/ui/1.11.0/jquery-ui.js"></script>
 <script src="./js/jquery.debounce-1.0.5.js"></script>
-<script src="./js/pjax.js"></script>
-<link rel="stylesheet" href="//code.jquery.com/ui/1.11.0/themes/smoothness/jquery-ui.css">
 
+
+<link rel="stylesheet" href="//code.jquery.com/ui/1.11.0/themes/smoothness/jquery-ui.css">
+<link rel="stylesheet" type="text/css" href="./css/my_css.css">
 <!--
 	The following statement is used to controll page animation.
 
@@ -89,171 +90,7 @@
 
 </script>
 
-<!-- PJAX used -->
-
-<script>
-
-	
-	$(function() {
-		$('ul a').pjax('#main-container')
-	})
-	
-</script>
-
-
 <style type="text/css">
-	
-	html, body {
-    margin:0; padding:0; height:100%;
-	}
-
-
-	@media screen and (min-width: 800px) {
-		.box {
-			
-			width: auto;
-			height: 600px;		
-		}
-	}
-	@media screen and (min-width: 1366px) {
-		.box {
-				width: auto;
-				height: 960px;
-				
-		}
-	}
-	@media screen and (min-width: 1920px) {
-		.box {
-				width: auto;
-				height: 1080px;
-				
-			}
-	}
-	@media screen and (min-width: 2400px) {
-		.box {
-				width: auto;
-				height: 1440px;
-				
-			}
-	}
-
-	.change_page {
-		position: fixed;
-		right: 10px;
-		top: 45%;
-		height: 150px;
-		width: 20px;	
-	}
-
-	.change_page button {
-		width: 15px;
-		height: 15px;
-		margin-top: 10px;
-		-webkit-border-radius: 25px;
-		-moz-border-radius: 25px;
-		border-radius: 25px;
-		border-width: 2px;
-
-		background: white;
-	}
-
-	.change_page button:hover {
-		border-color: gray;
-		background: gray;
-	}
-
-	#page1 {
-		background-color: white;
-	}
-
-	#page2 {
-		background-color: #edeff2;
-	}
-
-	#page3 {
-		background-color: white;
-	}
-
-	#page4 {
-		background-color: #edeff2;
-	}
-
-	.div-title {
-		color: gray;
-		margin: 0px;
-		padding-top: 200px;
-		font-size: 80px;
-		text-align: center;
-		font-family: 'Lucida Grande', 'Lucida Sans Unicode', Helvetica, Arial, Verdana, sans-serif;
-	}
-
-	#bar
-	{
-		height: 60px;
-		width: 1000px; 
-		position: fixed;
-		background: rgba(200,200,200,0.75);
-		font-family: 'Lucida Grande', 'Lucida Sans Unicode', Helvetica, Arial, Verdana, sans-serif;
-		box-shadow:1px 1px 1px rgba(0,0,0,0.5);
-		display: inline;
-	}	
-
-	.bar_content
-	{
-		margin: 0px;
-		width: 500px;
-		float: right;
-	}
-
-	.bar_content li
-	{
-		height: 60px;
-		float: left;
-		font-size: 25px;
-		display: inline;
-	}
-
-	.bar_content li a
-	{
-		height: 60px;
-		width: 100px;
-		text-align: center;
-		line-height: 60px;
-
-		float: right;
-		font-size: 25px;
-		display: inline;
-
-		text-decoration: none;
-		color: black;	
-	}
-
-	.bar_content li a:hover
-	{
-		color: white;	
-	}
-
-	#sub-title
-	{
-		font-size: 25px;
-		font-weight: bold;
-		float: left;
-		position: absolute;
-		left: 25px;
-		line-height: 60px;
-		text-decoration: none;
-	}
-
-	#sub-title:hover
-	{
-		color: black;
-	}
-
-	#sub-title:visited
-	{
-		color: black;
-	}
-	
 	
 </style>
 </head>
