@@ -4,7 +4,9 @@ if($_GET['type']!='ajax'){
     echo "<div id='main-content'>";
 }
 ?>
-		
+	
+	<script src="./js/my_js.js"></script>
+
 	<div class = "change_page">
 		<button class = "goto_page1"></button>
 		<button class = "goto_page2"></button>
