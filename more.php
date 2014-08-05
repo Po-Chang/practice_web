@@ -5,6 +5,7 @@ if($_GET['type']!='ajax'){
 }
 ?>
 
+	<p id = "id_for_page" class = "none-scroll"></p>
 
 	<div class = "box" id = "page1">
 			<img src="./img/IMG_4114.jpg">

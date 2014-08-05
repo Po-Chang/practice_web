@@ -32,6 +32,11 @@ html, body {
 			}
 	}
 
+	#id_for_page {
+		display: none;
+		margin: 0px;
+	}
+
 	.change_page {
 		position: fixed;
 		right: 10px;

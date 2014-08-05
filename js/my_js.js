@@ -47,26 +47,28 @@ var block_num = 4;
 
 
 	$(window).bind('mousewheel', $.throttle( function(event) {
-	    if (event.originalEvent.wheelDelta >= 0) {
-	        console.log('Scroll up' + $(this).scrollTop());
-			$('html,body').animate( {scrollTop:  $(this).scrollTop() - $( ".box" ).height() }, 900);
+		if ( $('#id_for_page').hasClass('scroll') ) {
+			if (event.originalEvent.wheelDelta >= 0) {
+			    console.log('Scroll up' + $(this).scrollTop());
+				$('html,body').animate( {scrollTop:  $(this).scrollTop() - $( ".box" ).height() }, 900);
 
-	    }
-	    else {
-	        console.log('Scroll down');
-			$('html,body').animate( {scrollTop:  $(this).scrollTop() + $( ".box" ).height() }, 900);
-	    }
+			}
+			else {
+			    console.log('Scroll down');
+				$('html,body').animate( {scrollTop:  $(this).scrollTop() + $( ".box" ).height() }, 900);
+			}
+		}
+		else {
+			$("body").css('overflow','scroll')
+		};
+		
 	}, 1500));	
 
 
-
 	$(document).ready(function(){ 
-			$("#bar").css('width', $(window).width())
-			,$(".box").css('height', $(window).height()); 
-	}); 
-
-	$(document).ready(function(){ 
-		$("body").css('overflow','hidden')
+		$("#bar").css('width', $(window).width())
+		,$(".box").css('height', $(window).height())
+		,$("body").css('overflow','hidden')
 		,$(window).resize(function(){ 
 			$("#bar").css('width', $(window).width())
 			,$(".box").css('height', $(window).height()); 

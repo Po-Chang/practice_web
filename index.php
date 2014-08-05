@@ -4,7 +4,9 @@ if($_GET['type']!='ajax'){
     echo "<div id='main-content'>";
 }
 ?>
-	
+	<p id = "id_for_page" class = "scroll"></p>
+
+	<script src="./js/jquery.debounce-1.0.5.js"></script>
 	<script src="./js/my_js.js"></script>
 
 	<div class = "change_page">
