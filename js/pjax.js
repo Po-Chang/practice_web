@@ -23,7 +23,8 @@ $.cergis.backForwardButtons = function () {
         });
     });
 }
-$("a").on('click', function (e) {
+
+$(".pjax-a").on('click', function (e) {
     pageUrl = $(this).attr('href');
     $.cergis.loadContent();
     e.preventDefault();

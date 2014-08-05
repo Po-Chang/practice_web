@@ -14,18 +14,18 @@
 <body>
 	<div id = "bar">
 
-		<a id = "sub-title" href="#">iOS Developer</a>
+		<a id = "sub-title" href="index.php">iOS Developer</a>
 
 
 		<ul class = "bar_content">
 			<li id = "pn-index">
-				<a href="index.php">首頁</a>
+				<a class = "pjax-a" href="index.php">首頁</a>
 			</li>
 			<li id = "pn-introduction">
-				<a href="intro.php">介紹</a>
+				<a class = "pjax-a" href="intro.php">介紹</a>
 			</li>
 			<li id = "pn-more">
-				<a href="more.php">更多</a>
+				<a class = "pjax-a" href="more.php">更多</a>
 			</li>		
 		</ul>
 	</div>
