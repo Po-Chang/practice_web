@@ -76,10 +76,21 @@ html, body {
 	.div-title {
 		color: gray;
 		margin: 0px;
-		padding-top: 200px;
+		padding-top: 400px;
 		font-size: 80px;
 		text-align: center;
 		font-family: 'Lucida Grande', 'Lucida Sans Unicode', Helvetica, Arial, Verdana, sans-serif;
+	}
+
+	.div-content {
+
+		margin-top:15px;
+		margin-bottom: 0px; 
+		color: gray;
+		font-size: 50px;
+		text-align: center;
+		font-family: 'Lucida Grande', 'Lucida Sans Unicode', Helvetica, Arial, Verdana, sans-serif;
+
 	}
 
 	#bar
