@@ -6,6 +6,7 @@ $.cergis.loadContent = function () {
         url: pageUrl + '?type=ajax',
         success: function (data) {
             $('#main-content').html(data);
+            // hide ajax loader
         }
     });
     if (pageUrl != window.location) {

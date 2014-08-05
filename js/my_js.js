@@ -44,10 +44,11 @@ var block_num = 4;
 	Now have some problem, when resize it, it can't on the block start.
 */
 
-
-
 	$(window).bind('mousewheel', $.throttle( function(event) {
+
 		if ( $('#id_for_page').hasClass('scroll') ) {
+			console.log("In scroll class.");
+
 			if (event.originalEvent.wheelDelta >= 0) {
 			    console.log('Scroll up' + $(this).scrollTop());
 				$('html,body').animate( {scrollTop:  $(this).scrollTop() - $( ".box" ).height() }, 900);
@@ -59,6 +60,7 @@ var block_num = 4;
 			}
 		}
 		else {
+			console.log("In none-scroll class.");
 			$("body").css('overflow','scroll')
 		};
 		
