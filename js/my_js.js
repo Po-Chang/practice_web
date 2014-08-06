@@ -2,44 +2,61 @@
 /*
 	The following statement is used to controll page animation.
 
-	I want to use a lock to controll race condition when useing mosue whell,
-	but it didn't work well, need to fix it.
-
 	Using $("#page1").offset().top to get the element y .  //解釋給哈哈聽
-*/
 
-var block_num = 4;
+	And scroll_to_page function is used to scroll the page to where I need,
+	and chage any thing what I want.
+	
+	I can reuse it on click event or mousewheel event.
+*/
+	function scroll_to_page( page_num ) {
+
+		if (page_num == 1)
+		{
+			$('html,body').animate({scrollTop: $("#page1").offset().top }, 1200);
+		}
+		else if (page_num == 2)
+		{
+			$('html,body').animate({scrollTop: $("#page2").offset().top }, 1200);
+		}
+		else if (page_num == 3) 
+		{
+			$('html,body').animate({scrollTop: $("#page3").offset().top }, 1200);
+		}
+		else if (page_num == 4)
+		{
+			$('html,body').animate({scrollTop: $("#page4").offset().top }, 1200);
+		}
+	}
+
 
 	$(function() {
 		$( ".goto_page1" )
 			.button()
 			.click(function( event ) {
-				$('html,body').animate({scrollTop: $("#page1").offset().top }, 1200);
+				scroll_to_page(1);
 		}),
 		$( ".goto_page2" )
 			.button()
 			.click(function( event ) {
-				$('html,body').animate({scrollTop: $("#page2").offset().top }, 1200);
+				scroll_to_page(2);
 		}),
 		$( ".goto_page3" )
 			.button()
 			.click(function( event ) {
-				$('html,body').animate({scrollTop: $("#page3").offset().top }, 1200);
+				scroll_to_page(3);
 		}),
 		$( ".goto_page4" )
 			.button()
 			.click(function( event ) {
-				$('html,body').animate({scrollTop: $("#page4").offset().top }, 1200);
+				scroll_to_page(4);
 		});
-  });
+	});
 
 /*
-	The following statement is used to listen the browser,
-	if browser be resized, 
-	and the box class's height will be change to windows height.
-
-	And I used $("body").css('overflow','hidden') to hide the scroll bar,
-	it can let me use scroll but didn't show that.
+	I detect all of these pages(1~4) which on one page scroll.
+	We only need which page be scroll and scroll to top page or bottom page.
+	and now we can set the right hand side's button to waht I wnat theme now.
 
 	Now have some problem, when resize it, it can't on the block start.
 */
@@ -52,9 +69,9 @@ var block_num = 4;
 			if (event.originalEvent.wheelDelta >= 0) {
 					console.log('Scroll up');
 				}
-				else {
+			else {
 					console.log('Scroll down');
-					$('html,body').animate({scrollTop: $("#page2").offset().top }, 1200);
+					scroll_to_page(2);
 				}
 
 		}, 1500));
@@ -64,11 +81,11 @@ var block_num = 4;
 
 			if (event.originalEvent.wheelDelta >= 0) {
 					console.log('Scroll up');
-					$('html,body').animate({scrollTop: $("#page1").offset().top }, 1200);
+					scroll_to_page(1);
 				}
 			else {
 					console.log('Scroll down');
-					$('html,body').animate({scrollTop: $("#page3").offset().top }, 1200);
+					scroll_to_page(3);
 				}
 
 		}, 1500));
@@ -77,11 +94,11 @@ var block_num = 4;
 
 			if (event.originalEvent.wheelDelta >= 0) {
 					console.log('Scroll up');
-					$('html,body').animate({scrollTop: $("#page2").offset().top }, 1200);
+					scroll_to_page(2);
 				}
 			else {
 					console.log('Scroll down');
-					$('html,body').animate({scrollTop: $("#page4").offset().top }, 1200);
+					scroll_to_page(4);
 				}
 
 		}, 1500));
@@ -90,7 +107,7 @@ var block_num = 4;
 
 			if (event.originalEvent.wheelDelta >= 0) {
 					console.log('Scroll up');
-					$('html,body').animate({scrollTop: $("#page3").offset().top }, 1200);
+					scroll_to_page(3);
 				}
 			else {
 					console.log('Scroll down');

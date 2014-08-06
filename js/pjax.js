@@ -2,9 +2,6 @@
 
 $.cergis = $.cergis || {};
 $.cergis.loadContent = function () {
-
-
-
     $.ajax({
         url: pageUrl + '?type=ajax',
         success: function (data) {
