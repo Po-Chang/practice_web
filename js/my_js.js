@@ -12,24 +12,24 @@ var block_num = 4;
 
 	$(function() {
 		$( ".goto_page1" )
-    		.button()
-    		.click(function( event ) {
-    			$('html,body').animate({scrollTop: $("#page1").offset().top }, 1200);
-    	}),
+			.button()
+			.click(function( event ) {
+				$('html,body').animate({scrollTop: $("#page1").offset().top }, 1200);
+		}),
 		$( ".goto_page2" )
-    		.button()
-    		.click(function( event ) {
-    			$('html,body').animate({scrollTop: $("#page2").offset().top }, 1200);
+			.button()
+			.click(function( event ) {
+				$('html,body').animate({scrollTop: $("#page2").offset().top }, 1200);
 		}),
 		$( ".goto_page3" )
-    		.button()
-    		.click(function( event ) {
-    			$('html,body').animate({scrollTop: $("#page3").offset().top }, 1200);
+			.button()
+			.click(function( event ) {
+				$('html,body').animate({scrollTop: $("#page3").offset().top }, 1200);
 		}),
 		$( ".goto_page4" )
-    		.button()
-    		.click(function( event ) {
-    			$('html,body').animate({scrollTop: $("#page4").offset().top }, 1200);
+			.button()
+			.click(function( event ) {
+				$('html,body').animate({scrollTop: $("#page4").offset().top }, 1200);
 		});
   });
 
@@ -44,28 +44,61 @@ var block_num = 4;
 	Now have some problem, when resize it, it can't on the block start.
 */
 
-	$(window).bind('mousewheel', $.throttle( function(event) {
 
-		if ( $('#id_for_page').hasClass('scroll') ) {
-			console.log("In scroll class.");
+	$(document).ready(function(){ 
+
+		$('#page1').bind('mousewheel', $.throttle(function(event) {
 
 			if (event.originalEvent.wheelDelta >= 0) {
-			    console.log('Scroll up' + $(this).scrollTop());
-				$('html,body').animate( {scrollTop:  $(this).scrollTop() - $( ".box" ).height() }, 900);
+					console.log('Scroll up');
+				}
+				else {
+					console.log('Scroll down');
+					$('html,body').animate({scrollTop: $("#page2").offset().top }, 1200);
+				}
 
-			}
+		}, 1500));
+
+
+		$('#page2').bind('mousewheel', $.throttle(function(event) {
+
+			if (event.originalEvent.wheelDelta >= 0) {
+					console.log('Scroll up');
+					$('html,body').animate({scrollTop: $("#page1").offset().top }, 1200);
+				}
 			else {
-			    console.log('Scroll down');
-				$('html,body').animate( {scrollTop:  $(this).scrollTop() + $( ".box" ).height() }, 900);
-			}
-		}
-		else {
-			console.log("In none-scroll class.");
-			$("body").css('overflow','scroll')
-		};
-		
-	}, 1500));	
+					console.log('Scroll down');
+					$('html,body').animate({scrollTop: $("#page3").offset().top }, 1200);
+				}
 
+		}, 1500));
+
+		$('#page3').bind('mousewheel', $.throttle(function(event) {
+
+			if (event.originalEvent.wheelDelta >= 0) {
+					console.log('Scroll up');
+					$('html,body').animate({scrollTop: $("#page2").offset().top }, 1200);
+				}
+			else {
+					console.log('Scroll down');
+					$('html,body').animate({scrollTop: $("#page4").offset().top }, 1200);
+				}
+
+		}, 1500));
+
+		$('#page4').bind('mousewheel', $.throttle(function(event) {
+
+			if (event.originalEvent.wheelDelta >= 0) {
+					console.log('Scroll up');
+					$('html,body').animate({scrollTop: $("#page3").offset().top }, 1200);
+				}
+			else {
+					console.log('Scroll down');
+				}
+
+		}, 1500));
+
+	});
 
 	$(document).ready(function(){ 
 		$("#bar").css('width', $(window).width())

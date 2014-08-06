@@ -2,11 +2,25 @@
 
 $.cergis = $.cergis || {};
 $.cergis.loadContent = function () {
+
+
+
     $.ajax({
         url: pageUrl + '?type=ajax',
         success: function (data) {
             $('#main-content').html(data);
-            // hide ajax loader
+
+            //Check if need to hidden scroll bar
+
+            if ( $('#id_for_page').hasClass('scroll') ) {
+                console.log('overflow hidden');
+                $("body").css('overflow','hidden');
+            }
+            else {
+                console.log('overflow scroll');
+                $("body").css('overflow','scroll');
+            }
+
         }
     });
     if (pageUrl != window.location) {
@@ -19,6 +33,17 @@ $.cergis.backForwardButtons = function () {
             url: location.pathname + '?type=ajax',
             success: function (data) {
                 $('#main-content').html(data);
+
+                //Check if need to hidden scroll bar
+
+                if ( $('#id_for_page').hasClass('scroll') ) {
+                    console.log('overflow hidden');
+                    $("body").css('overflow','hidden');
+                }
+                else {
+                    console.log('overflow scroll');
+                    $("body").css('overflow','scroll');
+                }
             }
         });
     });
